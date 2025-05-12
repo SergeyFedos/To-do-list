@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO app</title>
+</head>
+
+<body>
+  <h1><img src="list_alt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">TODO App</h1>
+  <div id="container">
+    <div id="projects-container">
+      <div id="add-proj-btn" class="add-proj-btn">Add Project</div>
+    </div>
+    <div id="todos-container">
+      <div id="add-todos-btn">Add Todo</div>
+    </div>
+
+  </div>
+  <template id="proj-div-templ">
+    <div class="project-div">
+      <span class="proj-div-span"></span>
+      <div class="proj-div-btn">X</div>
+    </div>
+  </template>
+  <template id="todo-div-templ">
+    <div class="todo-div">
+
+      <input type="checkbox" class="todo-checkbox">
+      <span class="todo-title"></span>
+      <span class="todo-duedate"></span>
+      <span class="todo-completed"></span>
+      <div class="todo-details-btn">Details</div>
+      <div class="todo-remove-btn">X</div>
+    </div>
+  </template>
+  <dialog id="details-dialog">
+    <div class="close-btn">X</div>
+    <div class="details-title"></div>
+    <div class="details-duedate"></div>
+    <div class="details-priority"></div>
+    <div class="details-description"></div>
+
+  </dialog>
+  <template id="proj-window">
+
+    <div id="proj-title-window" class="hidden">
+      <label for="proj-title" class="proj-title-label">Project Title</label>
+      <input type="text" class="proj-title-input">
+      <div id="proj-btn-cont">
+        <div id="proj-confirm-btn">Confirm</div>
+        <div id="proj-cancel-btn">Cancel</div>
+      </div>
+    </div>
+  </template>
+  <template id="todo-window">
+
+    <form id="form" class="hidden">
+      <label for="todo-title">Title</label>
+      <input type="text" id="todo-title" required>
+      <label for="todo-duedate">Duedate</label>
+      <input type="date" id="duedate">
+      <label for="priority">Priority</label>
+      <select name="priority" id="priority">
+        <option value="">Select Priority</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <label for="todo-description">Description</label>
+      <textarea id="todo-description" cols="15" rows="5"></textarea>
+      <div id="todo-btn-cont">
+        <div id="todo-confirm-btn">Confirm</div>
+        <div id="todo-cancel-btn">Cancel</div>
+      </div>
+    </form>
+  </template>
+
+
+</body>
+
+</html>

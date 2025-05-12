@@ -1,0 +1,281 @@
+:root {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+  display: flex;
+  width: 100%;
+  min-width: 300px
+}
+
+#projects-container {
+  width: 30%;
+  background-color: rgba(83, 83, 83, 0.938);
+  height: 100vh;
+  color: white;
+  font-size: 2rem;
+  overflow: auto;
+}
+
+#todos-container {
+  background-color: darkgrey;
+  height: 100vh;
+  width: 70%;
+  overflow: auto;
+  text-align: center;
+  font-size: 4rem;
+}
+
+#proj-title-window {
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 2rem auto;
+  gap: 2rem;
+  border-radius: 10px;
+  background-color: rgba(71, 70, 70, 0.638);
+}
+
+#proj-btn-cont,
+#todo-btn-cont {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#proj-btn-cont>div,
+#todo-btn-cont>div {
+  border: 2px solid white;
+  padding: 1rem;
+  background-color: rgba(71, 70, 70, 0.938);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.proj-title-input {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 3rem;
+  border-radius: 5px;
+  outline: none;
+}
+
+.proj-title-label {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#form {
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 2rem auto;
+  gap: 2rem;
+  border-radius: 10px;
+  background-color: rgba(71, 70, 70, 0.638);
+  color: white;
+  font-size: 2rem;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+#form>label {
+  display: block;
+  margin-bottom: 0;
+  width: 90%;
+}
+
+#form>input,
+textarea,
+select {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 2rem;
+
+}
+
+#add-proj-btn,
+#add-todos-btn {
+  border: 2px solid white;
+  width: 20%;
+  padding: 1rem;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem auto;
+  background-color: rgba(71, 70, 70, 0.638);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.project-div,
+.todo-div {
+  width: 90%;
+
+  margin: 1rem auto;
+  border-radius: 10px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgba(54, 52, 52, 0.638);
+  align-items: center;
+}
+
+.proj-div-btn,
+.todo-remove-btn,
+.close-btn {
+  font-size: 2.2rem;
+  border: 5px outset white;
+  padding: 0.5rem;
+  width: 25px;
+  text-align: center;
+  background-color: brown;
+  color: black;
+  font-weight: 800;
+
+}
+
+.proj-div-btn:hover,
+.todo-remove-btn:hover,
+.todo-details-btn:hover,
+.close-btn:hover,
+#add-proj-btn:hover,
+#add-todos-btn:hover,
+#proj-confirm-btn:hover,
+#proj-cancel-btn:hover,
+#todo-confirm-btn:hover,
+#todo-cancel-btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  outline: 2px solid white;
+
+}
+
+.todo-div {
+  color: white;
+  justify-content: space-around;
+
+}
+
+.todo-details-btn {
+  font-size: 2.2rem;
+  border: 5px outset white;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: rgba(54, 52, 52, 0.638);
+  color: white;
+}
+
+.todo-checkbox {
+  width: 35px;
+  height: 35px;
+  accent-color: green
+}
+
+.completed {
+  background-color: rgb(4, 75, 4);
+}
+
+.completed span {
+  text-decoration: line-through;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#details-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  color: black;
+  background-color: white;
+  border: 5px inset black;
+}
+
+dialog {
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 2rem auto;
+  gap: 2rem;
+  border-radius: 10px;
+  background-color: rgba(71, 70, 70, 1);
+  color: white;
+  font-size: 2rem;
+  gap: 2rem;
+  padding: 2rem;
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+dialog[open] {
+  visibility: visible;
+  /* Shows the dialog when open */
+}
+
+.close-btn {
+  align-self: flex-end;
+}
+
+h1 {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
+  background-color: rgba(22, 19, 19, 0.8);
+  margin-bottom: 0;
+  color: white;
+  padding: 1rem;
+}
+
+h1 img {
+  width: 8rem;
+  filter: invert(100%);
+}
+
+@media (max-width: 600px) {
+  #container {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .todo-div,
+  .project-div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1rem;
+    width: 80%;
+  }
+
+  #add-proj-btn,
+  #add-todo-btn {
+    width: 60%;
+    font-size: 16px;
+  }
+}
